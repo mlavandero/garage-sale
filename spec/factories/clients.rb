@@ -2,10 +2,9 @@
 
 FactoryGirl.define do
   factory :client do
-    email "MyString"
-    first_name "MyString"
-    last_name "MyString"
-    mobile_phone "MyString"
-    landline_phone "MyString"
+    email Faker::Internet.email
+    first_name Faker::Name.first_name
+    last_name Faker::Name.last_name
+    mobile_phone Faker::Number.number(8)
   end
 end
