@@ -1,1 +1,11 @@
 es-CL:
+  activerecord:
+    models:
+      client: usuario
+    attributes:
+      client:
+        email: Correo Electrónico
+        first_name: Nombre
+        last_name: Apellido
+        mobile_phone: Celular
+        landline_phone: Teléfono Fijo
