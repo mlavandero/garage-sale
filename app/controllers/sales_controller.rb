@@ -39,12 +39,6 @@ class SalesController < ApplicationController
     end
   end
 
-  # DELETE /sales/1
-  def destroy
-    @sale.destroy
-    redirect_to sales_url, notice: 'Sale was successfully destroyed.'
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sale
