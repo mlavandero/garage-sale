@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'rspec-rails', '~> 3.0.0', group: [:development, :test]
 gem 'factory_girl_rails', group: [:development, :test]
+gem 'faker', group: [:development, :test]
 gem 'rails-i18n', '~> 4.0.0'
 
 gem 'therubyracer'
