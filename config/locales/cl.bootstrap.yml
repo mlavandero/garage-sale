@@ -1,0 +1,15 @@
+cl:
+  helpers:
+    actions: "Acciones"
+    links:
+      back: "Atras"
+      cancel: "Cancelar"
+      confirm: "Estas seguro?"
+      destroy: "Borrar"
+      new: "Nuevo"
+      edit: "Editar"
+    titles:
+      edit: "Editar %{model}"
+      save: "Guardar %{model}"
+      new: "Nuevo %{model}"
+      delete: "Borrar %{model}"
