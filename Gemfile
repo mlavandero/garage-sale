@@ -14,6 +14,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'paperclip', '~> 4.1'
 gem 'pry-rails', group: [:development]
 gem 'quiet_assets', group: [:development]
+gem 'guard-rspec', group: [:development], require: false
 
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => :bootstrap3
