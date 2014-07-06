@@ -14,7 +14,6 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'paperclip', '~> 4.1'
 
 gem 'therubyracer'
-gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => :bootstrap3
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
