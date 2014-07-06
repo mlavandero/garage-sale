@@ -8,6 +8,7 @@ es-CL:
       destroy: "Borrar"
       new: "Nuevo"
       edit: "Editar"
+      view: "Ver"
     titles:
       edit: "Editar %{model}"
       save: "Guardar %{model}"

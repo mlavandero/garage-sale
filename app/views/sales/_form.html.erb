@@ -1,4 +1,4 @@
-<%= form_for @sale, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @sale, url: @sale.id.present? ? client_sale_path : client_sales_path, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.hidden_field :client_id, :class => 'form-control' %>
   <div class="form-group">
     <%= f.label :title, :class => 'control-label' %>
@@ -9,25 +9,13 @@
   <div class="form-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :description, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :active, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :active, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :expiration_date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :expiration_date, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control' %>
     </div>
   </div>
 
   
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            sales_path, :class => 'btn btn-default' %>
+            client_sales_path, :class => 'btn btn-default' %>
  
 <% end %>

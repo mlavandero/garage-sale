@@ -2,6 +2,7 @@ es-CL:
   activerecord:
     models:
       client: usuario
+      sale: venta
     attributes:
       client:
         email: Correo Electrónico
@@ -9,3 +10,8 @@ es-CL:
         last_name: Apellido
         mobile_phone: Celular
         landline_phone: Teléfono Fijo
+      sale:
+        title: Nombre
+        description: Descripción
+        active: Activa
+        expiration_date: Fecha Término

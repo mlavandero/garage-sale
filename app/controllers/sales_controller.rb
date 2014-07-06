@@ -1,9 +1,10 @@
 class SalesController < ApplicationController
-  before_action :set_sale, only: [:show, :edit, :update, :destroy]
+  before_action :set_sale, only: [:show, :edit, :update]
 
   # GET /sales
   def index
-    @sales = Sale.all
+    @client = Client.find(params[:client_id])
+    @sales = @client.sales
   end
 
   # GET /sales/1
@@ -21,10 +22,10 @@ class SalesController < ApplicationController
 
   # POST /sales
   def create
-    @sale = Sale.new(sale_params)
+    @sale = Sale.new(sale_params.merge(client_id: params[:client_id]))
 
     if @sale.save
-      redirect_to @sale, notice: 'Sale was successfully created.'
+      redirect_to client_sale_path(@sale.client, @sale), notice: 'Sale was successfully created.'
     else
       render :new
     end
@@ -33,7 +34,7 @@ class SalesController < ApplicationController
   # PATCH/PUT /sales/1
   def update
     if @sale.update(sale_params)
-      redirect_to @sale, notice: 'Sale was successfully updated.'
+      redirect_to client_sale_path(@sale.client, @sale), notice: 'Sale was successfully updated.'
     else
       render :edit
     end
@@ -47,6 +48,6 @@ class SalesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def sale_params
-      params.require(:sale).permit(:client, :title, :description, :active, :expiration_date)
+      params.require(:sale).permit(:client, :client_id, :title, :description, :active, :expiration_date)
     end
 end
