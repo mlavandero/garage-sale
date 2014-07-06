@@ -12,6 +12,7 @@ gem 'factory_girl_rails', group: [:development, :test]
 gem 'faker', group: [:development, :test]
 gem 'rails-i18n', '~> 4.0.0'
 gem 'paperclip', '~> 4.1'
+gem 'pry-rails', group: [:development]
 
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => :bootstrap3
