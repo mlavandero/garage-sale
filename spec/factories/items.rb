@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :item do
-    sale
+    association :sale
     title Faker::Commerce.product_name
-    description Faker::Lorem.sentences(5)
+    description Faker::Lorem.sentences(5).join('  ')
     initial_price 1000
     currency 'CLP'
   end
