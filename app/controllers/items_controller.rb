@@ -3,14 +3,20 @@ class ItemsController < ApplicationController
 
   # GET /items
   def index
-    @items = Item.all
+    @client = Client.find(params[:client_id])
+    @sale = Sale.find(params[:sale_id])
+    if @sale.client == @client
+      @items = @sale.items
+    else
+
+    end
   end
 
   # GET /items/1
   def show
   end
 
-  # GET /items/new
+  # GET /clients/:client_id/sales/:sale_id/items/new
   def new
     @item = Item.new
   end
@@ -24,7 +30,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
 
     if @item.save
-      redirect_to @item, notice: 'Item was successfully created.'
+      redirect_to client_sale_item_path(id: @item), notice: 'Item was successfully created.'
     else
       render :new
     end
@@ -33,7 +39,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   def update
     if @item.update(item_params)
-      redirect_to @item, notice: 'Item was successfully updated.'
+      redirect_to client_sale_item_path(id: @item), notice: 'Item was successfully updated.'
     else
       render :edit
     end

@@ -1,34 +1,6 @@
-<%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="form-group">
-    <%= f.label :sale_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :sale_id, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :picture_file_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :picture_file_name, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :picture_content_type, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :picture_content_type, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :picture_file_size, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :picture_file_size, :class => 'form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :picture_updated_at, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :picture_updated_at, :class => 'form-control' %>
-    </div>
-  </div>
+<%= form_for @item, url: @item.id ? client_sale_item_path(id: @item.id) : client_sale_items_path, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+  <%= f.hidden_field :currency, value: 'CLP' %>
+  <%= f.hidden_field :sale_id, value: params[:sale_id] %>
   <div class="form-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -38,25 +10,24 @@
   <div class="form-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :description, :class => 'form-control' %>
+      <%= f.text_area :description, :class => 'form-control' %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :initial_price, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :initial_price, :class => 'form-control' %>
+      <%= f.number_field :initial_price, :class => 'form-control' %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :currency, :class => 'control-label' %>
+    <%= f.label :picture, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :currency, :class => 'form-control' %>
+      <%= f.file_field :picture, :class => 'form-control' %>
     </div>
   </div>
-
   
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            items_path, :class => 'btn btn-default' %>
+            client_sale_items_path, :class => 'btn btn-default' %>
  
 <% end %>
