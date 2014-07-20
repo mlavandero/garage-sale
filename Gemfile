@@ -17,6 +17,7 @@ gem 'quiet_assets', group: [:development]
 gem 'guard-rspec', group: [:development], require: false
 gem 'terminal-notifier-guard', group: [:development], require: false
 gem 'awesome_print', group: :development
+gem 'devise'
 
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => :bootstrap3
