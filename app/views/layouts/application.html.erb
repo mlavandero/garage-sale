@@ -34,8 +34,13 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to(t('sign_in'), new_client_session_path) %></li>
-            <li><%= link_to(t('sign_out'), destroy_client_session_path, method: :delete) %></li>
+            <% if(client_signed_in?) -%>
+              <li><%= link_to(t('hello') + " #{current_client.first_name}") %></li>
+              <li><%= link_to(t('sign_out'), destroy_client_session_path, method: :delete) %></li>
+            <% else -%>
+              <li><%= link_to(t('sign_up'), new_client_registration_path) %></li>
+              <li><%= link_to(t('sign_in'), new_client_session_path) %></li>
+            <% end -%>
           </ul>
         </div>
       </div>
