@@ -42,6 +42,7 @@ GEM
     awesome_print (1.2.0)
     bcrypt (3.1.7)
     builder (3.2.2)
+    cancancan (1.9.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     climate_control (0.0.3)
@@ -213,6 +214,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  cancancan (~> 1.9)
   coffee-rails (~> 4.0.0)
   devise
   factory_girl_rails

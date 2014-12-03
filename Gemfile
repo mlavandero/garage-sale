@@ -12,6 +12,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'paperclip', '~> 4.1'
 
 gem 'devise'
+gem 'cancancan', '~> 1.9'
 
 gem 'therubyracer'
 gem 'less-rails'
