@@ -20,6 +20,7 @@ gem 'awesome_print', group: :development
 gem 'devise'
 
 gem 'therubyracer'
+gem 'less-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => :bootstrap3
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
