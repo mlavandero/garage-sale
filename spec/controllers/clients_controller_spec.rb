@@ -26,18 +26,22 @@ RSpec.describe ClientsController, :type => :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ClientsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) {  }
+
+  before(:each) do
+
+  end
 
   describe "GET show" do
     it "assigns the requested client as @client" do
-      get :show, {:id => client.to_param}, valid_session
+      get :show, {:id => client.to_param}, {client_id: client.id}
       expect(assigns(:client)).to eq(client)
     end
   end
 
   describe "GET new" do
     it "assigns a new client as @client" do
-      get :new, {}, valid_session
+      get :new, {}
       expect(assigns(:client)).to be_a_new(Client)
     end
   end
